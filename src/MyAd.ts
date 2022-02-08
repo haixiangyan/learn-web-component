@@ -1,4 +1,4 @@
-class Advertisement extends HTMLElement {
+class MyAd extends HTMLElement {
   constructor() {
     super();
     this.initElement()
@@ -49,4 +49,4 @@ class Advertisement extends HTMLElement {
   }
 }
 
-customElements.define('my-ad', Advertisement)
+customElements.define('my-ad', MyAd)
