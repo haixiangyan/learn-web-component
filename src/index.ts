@@ -1,15 +1,18 @@
-import './styles.css'
-import Icon from './icon.png';
+class PopUpInfo extends HTMLElement {
+  constructor() {
+    super();
+    this.initElement()
+  }
 
-// Add title
-const text: string = 'A minimum template for building a static web app with TypeScript'
+  initElement() {
+    this.attachShadow({ mode: 'open' })
 
-const $content = document.querySelector('#content')
+    // 内容
+    const wrapper = document.createElement('span')
+    wrapper.textContent = this.getAttribute('data-text')
 
-$content.textContent = text
+    this.shadowRoot.append(wrapper)
+  }
+}
 
-// Add the image to our existing div.
-const myIcon = new Image();
-myIcon.src = Icon;
-
-document.body.appendChild(myIcon);
+customElements.define('popup-info', PopUpInfo)
