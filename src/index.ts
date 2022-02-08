@@ -1,18 +1,2 @@
-class PopUpInfo extends HTMLElement {
-  constructor() {
-    super();
-    this.initElement()
-  }
-
-  initElement() {
-    this.attachShadow({ mode: 'open' })
-
-    // 内容
-    const wrapper = document.createElement('span')
-    wrapper.textContent = this.getAttribute('data-text')
-
-    this.shadowRoot.append(wrapper)
-  }
-}
-
-customElements.define('popup-info', PopUpInfo)
+// 注册多个 web components
+import './HelloWorld'
