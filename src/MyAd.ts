@@ -28,8 +28,8 @@ class MyAd extends HTMLElement {
       .ad {
         position: relative;
         display: inline-flex;
-        height: 300;
-        width: 300;
+        height: 300px;
+        width: 300px;
         border: 2px solid red;
       }
     
