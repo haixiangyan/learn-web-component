@@ -17,5 +17,54 @@
 
 <my-ad data-image="//www.baidu.com/img/PC_880906d2a4ad95f5fafb2e540c5cdad7.png"></my-ad>
 
+<hr>
+
+<template id="my-layout-template">
+  <style>
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+    }
+    .nav { background: red; }
+    .main { flex: 1; display: flex; }
+    .sider { height: 100%; background: yellow; }
+    .container { flex: 1; height: 100%; background: blue; }
+    .footer { background: green; text-align: center; }
+  </style>
+  <div class="wrapper">
+    <div class="nav">
+      <slot name="nav">导航</slot>
+    </div>
+    <div class="main">
+      <div class="sider">
+        <slot name="sider">侧边栏</slot>
+      </div>
+      <div class="container">
+        <slot name="container">主要内容</slot>
+      </div>
+    </div>
+    <div class="footer">
+      <slot name="footer">脚注</slot>
+    </div>
+  </div>
+</template>
+
+<my-layout>
+  <ul slot="nav" style="display: flex">
+    <li><a href="#">头部主页</a></li>
+    <li style="margin-left: 24px;"><a href="#">头部关于</a></li>
+  </ul>
+  <ul slot="sider">
+    <li><a href="#">侧边栏用户详情</a></li>
+    <li><a href="#">侧边栏订单详情</a></li>
+  </ul>
+  <div slot="container">
+    <iframe width="100%" height="400px" src="https://www.bilibili.com/"></iframe>
+  </div>
+  <div slot="footer">
+    ©2022 Baidu
+  </div>
+</my-layout>
 </body>
 </html>
